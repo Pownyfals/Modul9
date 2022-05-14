@@ -71,9 +71,23 @@ public static class StringLibrary
     {
         string[] result = new string[persamaan.Length];
 
-        for (int i = 0; i <= persamaan.Length ; i++)
+        for (int i = 0; i <= persamaan.Length - 1; i++)
         {
-            result[i] = (persamaan[i] / persamaan.Length - i) + "x" + (persamaan.Length - i);
+            if (persamaan[i] < 0)
+            {
+                result[i] = (persamaan[i] / (persamaan.Length - i)) + "x" + (persamaan.Length - i);
+            }
+            else
+            {
+                if (i == 0)
+                {
+                    result[i] = (persamaan[i] / (persamaan.Length - i)) + "x" + (persamaan.Length - i);
+                }
+                else
+                {
+                    result[i] = "+"+(persamaan[i] / (persamaan.Length - i)) + "x" + (persamaan.Length - i);
+                }
+            }
         }
         string hasil = "";
         for (int j = 0; j < result.Length; j++)
@@ -83,8 +97,7 @@ public static class StringLibrary
                 hasil += result[j];
             }
         }
+        hasil += "+C";
         return hasil;
     }
-
-
 }
