@@ -2,15 +2,6 @@
 
 public static class StringLibrary
 {
-    public static bool StartsWithUpper(this string? str)
-    {
-        if (string.IsNullOrWhiteSpace(str))
-            return false;
-
-        char ch = str[0];
-        return char.IsUpper(ch);
-    }
-
     public static int FPB(int input1, int input2)
 	{
         int sisa;
@@ -41,7 +32,8 @@ public static class StringLibrary
 		{
             if (persamaan[i] < 0)
             {
-                result[i] = ((persamaan.Length - (i + 1)) * persamaan[i]) + "x" + (((persamaan.Length - (i + 2) == 0)) ? "" : ((persamaan.Length - (i + 2) == 1 )) ? "" : (persamaan.Length - (i + 2)));
+                result[i] = ((persamaan.Length - (i + 1)) * persamaan[i]) + "x" + (((persamaan.Length - (i + 2) == 0)) ? "" 
+                    : ((persamaan.Length - (i + 2) == 1 )) ? "" : (persamaan.Length - (i + 2)));
             }
             else
             {
@@ -51,7 +43,8 @@ public static class StringLibrary
                 }
 				else
 				{
-                    result[i] = "+"+((persamaan.Length - (i + 1)) * persamaan[i]) + "x" + (((persamaan.Length - (i + 2) == 0)) ? "" : ((persamaan.Length - (i + 2) == 1)) ? "" : (persamaan.Length - (i + 2)));
+                    result[i] = "+"+((persamaan.Length - (i + 1)) * persamaan[i]) + "x" + (((persamaan.Length - (i + 2) == 0)) ? "" 
+                        : ((persamaan.Length - (i + 2) == 1)) ? "" : (persamaan.Length - (i + 2)));
                 }
             }
 		}
